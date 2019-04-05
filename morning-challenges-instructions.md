@@ -21,7 +21,7 @@ For each challenge (in your repo working directory):
 `git merge <challenge_branch>`
 5. Complete the challenge
 6. Add and commit your changes<br/>
-`git add` <br/>
+`git add .` <br/>
 `git commit -m "<insert commit message>"`  
 7. Push to master in your fork:<br/>
 `git push origin master`
