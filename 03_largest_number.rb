@@ -1,23 +1,31 @@
-# Write a method that will take two numbers,
-# and return whichever is the largest.
-#
-# Example:
-# largest_number(100,50) should return 100
-# largest_number(10,20) should return 20
-#
+# Asks user for 2 numbers
+
+numbers = []
+
+2.times do
+puts "Enter a number:"
+num = gets.chomp.to_i
+numbers << num
+end
+
+# Prints out largest of the 2 numbers
+puts numbers.max
+
 # Check your solution by filling in the folowing table:
 # number_1 || number_2 || expected || actual
-# 
-# If your stuck try working togeather
-# 
+#    20    ||   90     ||    90    ||   90
+
 # Beast Mode:
-# If you complete the challenge, feel free to come up
-# with your own examples and test corner cases.
-# 
 # Examples - what if both numbers are equal or are strings?
 
 def largest_number (number_1, number_2)
-  # Your code here
+  if number_1 == number_2
+    puts number_1
+  elsif number_1 > number_2
+    puts number_1
+  else
+    puts number_2
+  end
 end
 
-largest_number(100,50)
+largest_number(100, 50)
