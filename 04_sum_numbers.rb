@@ -11,7 +11,7 @@
 # ruby tests/04_sum_numbers_test.rb
 
 def sum_numbers (numbers)
-  # Your code here
+  numbers.sum
 end
 
 

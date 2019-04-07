@@ -13,10 +13,9 @@
 # Example:
 # "hello", ["hi","howdy","hello"] should return true.
 
-def in_array (needle, haystack)
-  # Your code here
+def in_array (string, array)
+ array.include?(string)
 end
-
 
 # Beast Mode:
 
