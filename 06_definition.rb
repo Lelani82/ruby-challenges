@@ -14,6 +14,22 @@
 # Check your solution by running the tests:
 # ruby tests/06_definition_test.rb
 
-class Definition
-# Your code here
+class Definition 
+
+    def initialize
+        @dictionary = {}
+    end
+
+    def add_word(word, definition)
+        @dictionary[word] = definition
+    end
+
+    def lookup(word)
+        return @definition[word]
+    end
+
+    def total_words
+        return @definition.keys.count
+    end
+
 end
