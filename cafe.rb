@@ -10,14 +10,49 @@
 # and
 # 3 teas
 
+orders = { "latte": 6, "scone": 2, "tea": 3,}
+
 # Write a program that asks the customer for their order. The customer
 # will only order one item.
 #   if they order a latte, add one to the number of lattes you need to make,
 #   if they order a scone, add one to the number of scones you need to serve,
 #   if they order a tea, add one to the number of teas you need to make
-
 # Print the final order so you know what to make.
 
+puts "What would you like to order (latte, scone, tea)? Type (q)uit to quit."
+ordered_item = gets.chomp
+
+orders.each do |key, value|
+    if ordered_item == key.to_s
+        value += 1
+        puts "You have ordered #{value} of #{key}s"
+    end
+end
+
+
+   # if ordered_item == orders
+
+=begin
+if item == orders.items
+    puts orders
+end
+
+
+def add_to_order(item, quantity)
+    orders.each do |items, quantities|
+        if item == items
+            items << 
+
+        end
+    end
+end
+    puts add_to_order
+
+=end
+
+# latte
+# How many?
+# 2
 
 # Part 2
 # Lattes sell for $4, and cost $2 to make

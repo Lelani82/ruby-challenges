@@ -31,5 +31,4 @@ class Definition
     def total_words
         return @definition.keys.count
     end
-
 end
