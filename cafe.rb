@@ -10,8 +10,6 @@
 # and
 # 3 teas
 
-orders = { "latte": 6, "scone": 2, "tea": 3, }
-total_orders = {"latte": 0, "scone": 0, "tea": 0, }
 # Write a program that asks the customer for their order. The customer
 # will only order one item.
 #   if they order a latte, add one to the number of lattes you need to make,
@@ -19,23 +17,40 @@ total_orders = {"latte": 0, "scone": 0, "tea": 0, }
 #   if they order a tea, add one to the number of teas you need to make
 # Print the final order so you know what to make.
 
+# Current backlog of orders:
+orders = { "latte": 6, "scone": 2, "tea": 3, }
+# New orders:
+new_orders = {"latte": 0, "scone": 0, "tea": 0, }
+# Total orders
+total_orders = {"latte": 0, "scone": 0, "tea": 0, }
+
+# Ask customer what they want to order:
 puts "What would you like to order (latte, scone, tea)? Type (q)uit to quit."
 ordered_item = gets.chomp
 
+# Ask customer how much they want to order:
 puts "How many would you like to order? Type (q)uit to quit."
 ordered_quantity = gets.chomp.to_i
 
+# Look for items in orders hash and updates total_orders hash 
 orders.each do |key, value|
     if ordered_item == key.to_s
-        puts "You have ordered #{ordered_quantity} #{key}s"
+        puts "You have ordered #{ordered_quantity} #{key}s" # Tells customer what they ordered
     end
     if ordered_item == key.to_s
-        total_orders = ordered_quantity += value #This calculates TOTAL orders
+        total_orders = ordered_quantity += value #This calculates TOTAL orders (+= value OPPTIONAL)
         puts total_orders
     end
 end
-
-
+=begin
+# New orders from customers:
+new_orders.each do |key, value|
+    if ordered_item == key.to_s
+        ordered_quantity += value
+        puts new_orders
+    end
+end
+=end
 =begin
 #Updating total orders for the day BUT UPDATES ALL ITEMS
 orders.each do |key, value|
