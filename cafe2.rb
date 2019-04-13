@@ -66,13 +66,13 @@ end
 customers_latte_total = customers_lattes.inject(:+)
 customers_scone_total = customers_scones.inject(:+)
 customers_tea_total = customers_teas.inject(:+)
-puts "Thank you! Your order:"
+puts "Thank you! Your order is:"
 puts "#{customers_latte_total} Lattes" 
 puts "#{customers_scone_total} Scones" 
 puts "#{customers_tea_total} Teas"
 # Customers total:
 customers_total = (customers_latte_total * 4.00) + (customers_scone_total * 5.00) + (customers_tea_total * 3.00)
-puts "Order Total: $#{customers_total.to_f}"
+puts "Order Total: $#{format("%.2f", customers_total)}"
 
 # Add total orders to final order:
 total_lattes = lattes.inject(:+)
@@ -88,12 +88,16 @@ puts "The final order to be made is: #{total_lattes} x Lattes, #{total_scones} x
 # Tea sells for $3, and cost $0.50 to make
 # Print out the total profit for the orders you have.
 
-# Calculate profits:
+# Calculate item profits:
 lattes_profit = total_lattes * (4-2)
 scones_profit = total_scones * (5-3)
 teas_profit = total_teas * (3-0.50)
 
-puts "Total profits for the orders are: Lattes $#{lattes_profit.to_f}; Scones $#{scones_profit.to_f}; Teas $#{teas_profit.to_f}."
+puts "Total profits for the orders are: Lattes $#{format("%.2f", lattes_profit)}; Scones $#{format("%.2f", scones_profit)}; Teas $#{format("%.2f", teas_profit)}."
+
+# Calculate total days profits:
+total_days_profits = lattes_profit + scones_profit + teas_profit
+puts "Total profits for today is $#{format("%.2f", total_days_profits)}"
 
 # Part 3
 # Write a program that asks the user for their order.
