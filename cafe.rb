@@ -3,12 +3,27 @@
 # clean. Use data structures that are appropriate.
 # Make notes for anything you are unsure about.
 
+# Total orders as empty arrays:
+lattes = []
+scones = []
+teas = []
+
 # Part 1
 # You are working at a cafe where you have a current backlog of orders:
 # 6 lattes
 # 2 scones
 # and
 # 3 teas
+
+# Backlog of orders:
+lattes << 6
+scones << 2
+teas << 3
+
+# Customers order:
+customers_lattes = [0]
+customers_scones = [0]
+customers_teas = [0]
 
 # Write a program that asks the customer for their order. The customer
 # will only order one item.
@@ -17,113 +32,68 @@
 #   if they order a tea, add one to the number of teas you need to make
 # Print the final order so you know what to make.
 
-# Current backlog of orders:
-orders = { "latte": 6, "scone": 2, "tea": 3, }
-# New orders:
-new_orders = {"latte": 0, "scone": 0, "tea": 0, }
-# Total orders
-total_orders = {"latte": 0, "scone": 0, "tea": 0, }
-
-# Ask customer what they want to order:
-puts "What would you like to order (latte, scone, tea)? Type (q)uit to quit."
-ordered_item = gets.chomp
-
-# Ask customer how much they want to order:
-puts "How many would you like to order? Type (q)uit to quit."
-ordered_quantity = gets.chomp.to_i
-
-# Look for items in orders hash and updates total_orders hash 
-orders.each do |key, value|
-    if ordered_item == key.to_s
-        puts "You have ordered #{ordered_quantity} #{key}s" # Tells customer what they ordered
+# Ask customer for their order:
+loop do 
+    puts "What would you like to order (latte, scone, tea)? Type (q)uit to quit."
+    ordered_item = gets.chomp
+    if ordered_item == "q"
+        break
     end
-    if ordered_item == key.to_s
-        total_orders = ordered_quantity += value #This calculates TOTAL orders (+= value OPPTIONAL)
-        puts total_orders
-    end
-end
-=begin
-# New orders from customers:
-new_orders.each do |key, value|
-    if ordered_item == key.to_s
-        ordered_quantity += value
-        puts new_orders
+    if (ordered_item == "latte")
+        puts "How many?"
+        ordered_quantity = gets.chomp.to_i
+        customers_lattes << ordered_quantity
+        lattes << ordered_quantity
+        puts "Anything else? Type (q) to quit."
+    elsif (ordered_item == "scone")
+        puts "How many?"
+        ordered_quantity = gets.chomp.to_i
+        customers_scones << ordered_quantity
+        scones << ordered_quantity
+        puts "Anything else? Type (q) to quit."
+    elsif (ordered_item == "tea")
+        puts "How many?"
+        ordered_quantity = gets.chomp.to_i
+        customers_teas << ordered_quantity
+        teas << ordered_quantity
+        puts "Anything else? Type (q) to quit."
+    else
+        puts "Unfortunately we do not have that on the menu today."
     end
 end
-=end
-=begin
-#Updating total orders for the day BUT UPDATES ALL ITEMS
-orders.each do |key, value|
-    if ordered_item == key.to_s
-        orders.transform_values! { |v| v += ordered_quantity}
-        puts "You have ordered #{value} #{key}s"
-    end
-end
-=end
 
+# Customer's receipt
+customers_latte_total = customers_lattes.inject(:+)
+customers_scone_total = customers_scones.inject(:+)
+customers_tea_total = customers_teas.inject(:+)
+puts "Thank you! Your order:"
+puts "#{customers_latte_total} Lattes" 
+puts "#{customers_scone_total} Scones" 
+puts "#{customers_tea_total} Teas"
+# Customers total:
+customers_total = (customers_latte_total * 4.00) + (customers_scone_total * 5.00) + (customers_tea_total * 3.00)
+puts "Order Total: $#{customers_total.to_f}"
 
-#daily_orders = {"latte": 0, "scone": 0, "tea": 0,}
-#daily_orders.merge!(orders)
-#puts daily_orders
-#orders.merge!(orders) do|key, old_value, new_value|
- #   puts orders
-#end
+# Add total orders to final order:
+total_lattes = lattes.inject(:+)
+total_scones = scones.inject(:+)
+total_teas = teas.inject(:+)
 
-#puts orders.update
- 
-
-if ordered_item == "q"
-    puts "Thank you for your patronage. Have a great day!"
-end
-
-# 2
-sales_price = { "latte": 4, "scone": 5, "tea": 3,}
-cost_price = { "latte": 2, "scone": 3, "tea": 0.50,}
-
-latte_profit = "Total profits for lattes today is: %{latte}" % orders 
-scone_profit = "Total profits for scones today is: %{scone}" % orders
-tea_profit = "Total profits for teas today is: %{tea}" % orders
-#orders[:latte]*(4-2))
-# , "scone": 0, "tea": 0,}
-
-puts latte_profit
-puts scone_profit
-puts tea_profit
-
-=begin WORKS, EXCEPT ADDS COST TO ALL
-item_profit.each do |key, value|
-    if ordered_item == "latte"
-        value += 2.to_f
-    elsif ordered_item == "scone"
-        value += 2.to_f
-    else ordered_item == "tea"
-        value += 2.50
-    end
-    puts "Total #{key} profits for today is $#{value}"
-end
-=end
-=begin USE tHIS TO CALC DIFF BTWN COST & SALES
-def total_profit(item, quantity)
-    #item_profit.each do |key, value|
-     #   if ordered_item == key.to_s
-      #      value += 1
-       #     puts "Profit for #{key} is $#{value}"
-        #end
-        puts "#{item}, #{quantity}"
-end 
-
-total_profit("latte", 6)
-
-#end
-=end    
-
+# Final order to make:
+puts "The final order to be made is: #{total_lattes} x Lattes, #{total_scones} x Scones, and #{total_teas} x Teas."
 
 # Part 2
 # Lattes sell for $4, and cost $2 to make
 # Scones sell for $5, and cost $3 to make
 # Tea sells for $3, and cost $0.50 to make
-
 # Print out the total profit for the orders you have.
+
+# Calculate profits:
+lattes_profit = total_lattes * (4-2)
+scones_profit = total_scones * (5-3)
+teas_profit = total_teas * (3-0.50)
+
+puts "Total profits for the orders are: Lattes $#{lattes_profit.to_f}; Scones $#{scones_profit.to_f}; Teas $#{teas_profit.to_f}."
 
 # Part 3
 # Write a program that asks the user for their order.
@@ -149,4 +119,3 @@ total_profit("latte", 6)
 # 2 latte
 # 1 tea
 # Order total: $11.00
-

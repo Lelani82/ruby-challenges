@@ -3,7 +3,7 @@
 # clean. Use data structures that are appropriate.
 # Make notes for anything you are unsure about.
 
-# Menu as empty arrays:
+# Total orders as empty arrays:
 lattes = []
 scones = []
 teas = []
@@ -20,6 +20,11 @@ lattes << 6
 scones << 2
 teas << 3
 
+# Customers order:
+customers_lattes = [0]
+customers_scones = [0]
+customers_teas = [0]
+
 # Write a program that asks the customer for their order. The customer
 # will only order one item.
 #   if they order a latte, add one to the number of lattes you need to make,
@@ -28,40 +33,59 @@ teas << 3
 # Print the final order so you know what to make.
 
 # Ask customer for their order:
-
-
-puts "What would you like to order (latte, scone, tea)? Type (q)uit to quit."
-ordered_item = gets.chomp
-
-puts "How many would you like to order?"
-ordered_quantity = gets.chomp.to_i
-
-if (ordered_item == "latte")
-    lattes << ordered_quantity
-elsif (ordered_item == "scone")
-    scones << ordered_quantity
-elsif (ordered_item == "tea")
-    teas << ordered_quantity
-elsif (ordered_item == "q") 
-    puts "Thank you for your patronage. Have a great day!"
-else puts "Unfortunately we do not have that on the menu today"
+loop do 
+    puts "What would you like to order (latte, scone, tea)? Type (q)uit to quit."
+    ordered_item = gets.chomp
+    if ordered_item == "q"
+        break
+    end
+    if (ordered_item == "latte")
+        puts "How many?"
+        ordered_quantity = gets.chomp.to_i
+        customers_lattes << ordered_quantity
+        lattes << ordered_quantity
+        puts "Anything else? Type (q) to quit."
+    elsif (ordered_item == "scone")
+        puts "How many?"
+        ordered_quantity = gets.chomp.to_i
+        customers_scones << ordered_quantity
+        scones << ordered_quantity
+        puts "Anything else? Type (q) to quit."
+    elsif (ordered_item == "tea")
+        puts "How many?"
+        ordered_quantity = gets.chomp.to_i
+        customers_teas << ordered_quantity
+        teas << ordered_quantity
+        puts "Anything else? Type (q) to quit."
+    else
+        puts "Unfortunately we do not have that on the menu today."
+    end
 end
 
-# Add customer order to final order:
+# Customer's receipt
+customers_latte_total = customers_lattes.inject(:+)
+customers_scone_total = customers_scones.inject(:+)
+customers_tea_total = customers_teas.inject(:+)
+puts "Thank you! Your order:"
+puts "#{customers_latte_total} Lattes" 
+puts "#{customers_scone_total} Scones" 
+puts "#{customers_tea_total} Teas"
+# Customers total:
+customers_total = (customers_latte_total * 4.00) + (customers_scone_total * 5.00) + (customers_tea_total * 3.00)
+puts "Order Total: $#{customers_total.to_f}"
+
+# Add total orders to final order:
 total_lattes = lattes.inject(:+)
 total_scones = scones.inject(:+)
 total_teas = teas.inject(:+)
 
 # Final order to make:
-puts "There are a total of #{total_lattes} lattes to be made"
-puts "There are a total of #{total_scones} scones to be served"
-puts "There are a total of #{total_teas} teas to be made"
+puts "The final order to be made is: #{total_lattes} x Lattes, #{total_scones} x Scones, and #{total_teas} x Teas."
 
 # Part 2
 # Lattes sell for $4, and cost $2 to make
 # Scones sell for $5, and cost $3 to make
 # Tea sells for $3, and cost $0.50 to make
-
 # Print out the total profit for the orders you have.
 
 # Calculate profits:
@@ -69,7 +93,7 @@ lattes_profit = total_lattes * (4-2)
 scones_profit = total_scones * (5-3)
 teas_profit = total_teas * (3-0.50)
 
-puts "Total profits for the orders are: Lattes $#{lattes_profit}; Scones $#{scones_profit}; Teas $#{teas_profit}"
+puts "Total profits for the orders are: Lattes $#{lattes_profit.to_f}; Scones $#{scones_profit.to_f}; Teas $#{teas_profit.to_f}."
 
 # Part 3
 # Write a program that asks the user for their order.
@@ -95,15 +119,3 @@ puts "Total profits for the orders are: Lattes $#{lattes_profit}; Scones $#{scon
 # 2 latte
 # 1 tea
 # Order total: $11.00
-
-=begin
-puts "What would you like to order (latte, scone, tea)? Type (q)uit to quit."
-ordered_item = gets.chomp
-
-orders.each do |key, value|
-    if ordered_item == key.to_s
-        value += 1
-        puts "You have ordered #{value} #{key}s"
-    end
-end
-=end
