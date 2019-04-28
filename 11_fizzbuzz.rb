@@ -27,3 +27,23 @@
 # ...etc
 
 # Your code here
+number = 0
+while number < 100
+number += 1
+case
+    when (number % 3 == 0) 
+        puts "Fizz" 
+    when (number % 5 == 5)
+        puts "Buzz"
+    else 
+        puts number
+end 
+end
+
+number = 0
+while number < 100
+number += 1
+    if ((number % 3 == 0) 
+        puts  "Fizz" 
+        or puts "Buzz" if (number % 5 == 5))
+end
