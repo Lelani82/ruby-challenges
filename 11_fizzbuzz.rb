@@ -40,10 +40,10 @@ case
 end 
 end
 
-number = 0
-while number < 100
-number += 1
-    if ((number % 3 == 0) 
-        puts  "Fizz" 
-        or puts "Buzz" if (number % 5 == 5))
-end
+# number = 0
+# while number < 100
+# number += 1
+#     puts  "Fizz" if ((number % 3 == 0) 
+#     puts "Buzz" if (number % 5 == 5))
+#     puts number
+# end
