@@ -10,6 +10,27 @@
 # Check your solution by running the tests:
 # ruby tests/09_vowels_test.rb
 
-def vowels (string)
-  # Your code here
+def count_vowels (string)
+  array = []
+  letters = string.split("")
+  array << letters
+  array.each do | letters |
+    vowels = []
+    if letters == "a"
+      vowels << letters
+    elsif letters == "e"
+      vowels << letters
+    elsif letters == "i"
+      vowels << letters
+    elsif letters == "o"
+      vowels << letters
+      elsif letters == "u"
+      else
+      puts "no"
+    end
+  #puts array.include?("a")
+  end
 end
+
+count_vowels("The quick brown fox")
+puts vowels
