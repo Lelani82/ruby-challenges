@@ -12,6 +12,14 @@
 
 
 # Your code here
+loop do 
+    puts "Please enter something. Press (q) to quit"
+    words = gets.strip.downcase
+    if words == "q"
+        break
+    end
+        << words
+    end
 
 
 # Beast Mode:

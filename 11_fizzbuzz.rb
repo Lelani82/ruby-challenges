@@ -29,21 +29,16 @@
 # Your code here
 number = 0
 while number < 100
-number += 1
-case
+    # Increments 1 to 100
+    number += 1
+    case
+    when (number % 3 == 0 && number % 5 == 0)
+        puts "FizzBuzz"
     when (number % 3 == 0) 
         puts "Fizz" 
-    when (number % 5 == 5)
+    when (number % 5 == 0)
         puts "Buzz"
     else 
         puts number
-end 
+    end 
 end
-
-# number = 0
-# while number < 100
-# number += 1
-#     puts  "Fizz" if ((number % 3 == 0) 
-#     puts "Buzz" if (number % 5 == 5))
-#     puts number
-# end
