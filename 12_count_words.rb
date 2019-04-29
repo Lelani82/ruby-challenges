@@ -12,14 +12,17 @@
 
 
 # Your code here
-loop do 
-    puts "Please enter something. Press (q) to quit"
-    words = gets.strip.downcase
-    if words == "q"
-        break
+def count_words(words)
+    word_hash = Hash.new(0)
+    words.downcase.split.each do |word|
+        word_hash[word] += 1
     end
-        << words
-    end
+    return word_hash
+
+
+end
+
+p count_words('hi hi Hi hello 1 1')
 
 
 # Beast Mode:
