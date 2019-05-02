@@ -19,3 +19,21 @@
 
 
 # Your code here
+puts "Please enter a sentence"
+sentence = gets.strip.downcase
+
+def s_to_th (sentence)
+    # split words into letters
+    letters_split = sentence.split("")
+    # iterate through letters and replace s with th
+    letters_split = letters_split.map do |letter|
+        if letter == 's'
+            'th'
+        else
+            letter
+        end
+    end
+    puts letters_split.join
+end
+
+s_to_th(sentence)
