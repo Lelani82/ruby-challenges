@@ -23,6 +23,10 @@
 # ruby tests/13_fibonacci_test.rb
 
 def nthFibonacci (n)
-  num = 1
-  nth = (n + num)
+  num1 = n
+  num2 = (num2 + n)
+  
+  puts num2
 end
+
+nthFibonacci(3)
