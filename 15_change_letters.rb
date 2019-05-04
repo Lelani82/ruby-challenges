@@ -16,9 +16,8 @@
 # Check your solution by running:
 # ruby 15_change_letters.rb
 
-
-
 # Your code here
+# get user input
 puts "Please enter a sentence"
 sentence = gets.strip.downcase
 

@@ -25,5 +25,7 @@
 puts "What is your name?"
 name = gets.strip
 puts "Hi #{name}! How old are you?"
-age = gets.strip
+age = gets.strip.to_i
 puts "Wow! You are #{age} years old. Congratulations!"
+sum = 100 - age
+puts "#{name}, in #{sum} years you will be 100 years old!"
