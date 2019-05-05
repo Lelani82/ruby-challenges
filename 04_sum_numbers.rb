@@ -14,7 +14,7 @@ def sum_numbers (numbers)
   numbers.sum
 end
 
-#p sum_numbers([1,1,1])
+#p sum_numbers([1,1,1])   #this is on test page
 
 
 # OPTIONAL:
