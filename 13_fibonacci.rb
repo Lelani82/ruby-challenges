@@ -22,11 +22,41 @@
 # Check your solution by running the tests:
 # ruby tests/13_fibonacci_test.rb
 
-def nthFibonacci (n)
-  num1 = n
-  num2 = (num2 + n)
+def nthFibonacci (a)
+  # create an array
+  a, b, fibonacci = 0,1,[]
+
+  # fibonacci algorithm - 
+  for item in fibonacci do
+    a, b = b, a + b
+  end
+   
   
-  puts num2
+  # p fibonacci           # testing
+  
+  # b +=1
+  # p c = a + b
+  #d = b + c  
+  
+
+  # create hash where key is letter and value is index
+  #find_index = Hash.new(0)
+
 end
 
-nthFibonacci(3)
+p nthFibonacci(1) 
+# test: assert_equal(0, nthFibonacci(0)) # 1st num & index number
+# 0 1 1 2 3 5 8
+# a = 0
+# b = 1
+
+# a + b = c
+# 0 + 1 = 1
+# b + c = d 
+# 1 + 1 = 2 
+# c + d = e 
+# 1 + 2 = 3
+# d + e = f 
+# 2 + 3 = 5
+# e + f = g 
+# 3 + 5 = 8

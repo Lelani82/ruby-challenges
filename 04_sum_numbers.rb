@@ -14,6 +14,8 @@ def sum_numbers (numbers)
   numbers.sum
 end
 
+#p sum_numbers([1,1,1])
+
 
 # OPTIONAL:
 # Go to the tests folder and open 04_sum_numbers_test.rb.
