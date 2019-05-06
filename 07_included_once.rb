@@ -19,5 +19,20 @@
 #
 
 def included_once (haystack, needle)
-  # Your code here
+  haystack.each do |word|
+    if needle == word
+      p "true"
+    else
+      p "false"
+    end
+  end
+  
+  # if included_words.length < 1
+  #   puts "true"
+  # else
+  #   puts "false"
+  # end
+  
 end
+
+included_once(['hello','hi','hi'], 'hi')
