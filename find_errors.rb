@@ -1,4 +1,3 @@
-
 # This method has some problems. See if you can work out what they
 # are and get it to work.
 # Start by running it, and use the error or unexpected condition
@@ -11,6 +10,7 @@
 def contains?(arr,val)
     # Initialise the index
     ind=0
+    found=false
     # while we haven't found the value and we 
     # still have values to check
     while !found and ind < arr.length do
