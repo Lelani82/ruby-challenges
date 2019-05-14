@@ -47,5 +47,20 @@
 # Note : The middle digit(s) are 02.
 
 def balanced_num(number)
-    # Your code goes here
+    # split number into individual digits and save into array
+    p number_array = number.digits
+
+    #for even number of digits in array
+    if (number_array.length % 2 == 0)
+        # split array in half and create 2 seperate arrays
+        p split_array = number_array.each_slice( (number_array.size/2.0).round ).to_a
+        p split_array.index                                                             # stuck here
+        puts "even"
+    #for odd number of digits in array
+    else
+        puts "odd"
+    end
+       
 end
+
+balanced_num(9597)
