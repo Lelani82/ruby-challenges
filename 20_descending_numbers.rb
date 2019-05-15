@@ -16,10 +16,13 @@
 #Input: 1254859723 Output: 9875543221
 
 def descending_order(n)
-    # Your code goes here
+    array = n.digits
+    array.sort!
+    array.reverse!
+    return array.join.to_i          # To make Janel happy :)
 end
 
 # Test your code here
-descending_order(1)
+puts descending_order(21445)
 
 # Add some interesting test cases that test edge cases
