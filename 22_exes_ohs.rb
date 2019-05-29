@@ -33,5 +33,24 @@
 # Expected output: false
 
 def exes_and_ohs(input)
+    #split string into single letters in array
+    letters = input.split("")
+    #create hash where key is letter and value is is number of times letter is counted
+    letters_sorted = Hash.new(0)
+    
+    # p letters.sort!
+    # first_letter = letters.index(0)
+    # p first_letter
+    letters.each do |letter|
+        if letter == letters
+            letters_sorted.update(letters_sorted) { |k,v|}
+        end
+        p letters_sorted
+    end
+
+
+
     # Your code goes here
 end
+
+exes_and_ohs("ooxx")
