@@ -14,6 +14,21 @@
 # *E.g.* remove_adjacent_duplicates("abcABCabcABC") should return exactly the same string: "abcABCabcABC"
 
 def remove_adjacent_duplicates(input)
-    # Your code goes here
+    # create empty strings
+    result = ""
+    last = ""
+    # checks each letter in string
+    input.chars.each do |letter|
+        # if letter does not match letter in string, update last string
+        if letter != last
+            # add letter to result string
+            result += letter
+            # updates last letter checked in last string
+            last = letter
+        end
+    end
+    return result
 end
 
+p remove_adjacent_duplicates("AAaAbbCCCcDDcDA")
+p remove_adjacent_duplicates("abcABCabcABC")
