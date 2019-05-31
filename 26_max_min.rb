@@ -17,5 +17,6 @@
 
 
 def max_min(num_string)
-    # your code goes here
+    num_array = num_string.split(" ")
+    return num = num_array.select { |x| x[/^-?\d+$/] }.minmax_by(&:to_i).reverse.join(" ")
 end
