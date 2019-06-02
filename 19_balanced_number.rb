@@ -46,21 +46,33 @@
 # and the sum of all digits to the right of the middle digits (20) are equal, then it's not balanced.
 # Note : The middle digit(s) are 02.
 
-def balanced_num(number)
+def balancedNum(number)
     # split number into individual digits and save into array
-    p number_array = number.digits
+    number_array = number.digits
 
     #for even number of digits in array
     if (number_array.length % 2 == 0)
         # split array in half and create 2 seperate arrays
-        p split_array = number_array.each_slice( (number_array.size/2.0).round ).to_a
-        p split_array.index                                                             # stuck here
-        puts "even"
+        split_array = number_array.each_slice( (number_array.size/2.0).round ).to_a
+        if split_array[0].sum == split_array[-1].sum
+            return "Balanced"
+        else
+            return "Not Balanced"
+        end                                                            
     #for odd number of digits in array
     else
-        puts "odd"
+        split_array = number_array.each_slice( (number_array.size/2.0).round ).to_a
+        split_array[0].pop
+        if split_array[0].sum == split_array[-1].sum
+            return "Balanced"
+        else
+            return "Not Balanced"
+        end
     end
        
 end
 
-balanced_num(9597)
+p balancedNum(7)            # => "Balanced"
+p balancedNum(295591)       # => "Not Balanced"
+p balancedNum(959)          # => "Balanced"
+p balancedNum(27102983)     # => "Not Balanced"
