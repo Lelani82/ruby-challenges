@@ -26,10 +26,20 @@
 # non-repeat, without checking every other letter?
 
 def first_non_repeating(input)
-    # Your code goes here
+    letters = input.split("")
+    item = ""
+    letters.each do |letter|
+        # if letter == item
+        #     letter += item
+        # end
+        # if letter != item
+        #     p item
+        # end
+    end
+
 end
 
 # Test your code here
-puts first_non_repeating("aaaabbbcccdeeefgh")
-puts first_non_repeating("wwwhhhggge")
-puts first_non_repeating("wwwhhhggg")
+puts first_non_repeating("aaaabbbcccdeeefgh")   # d
+puts first_non_repeating("wwwhhhggge")          # e
+puts first_non_repeating("wwwhhhggg")           # false

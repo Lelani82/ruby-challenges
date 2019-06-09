@@ -25,13 +25,13 @@
 
 def sort(num_array)
     # Initialize empry array for sorted numbers
-    numbers = [1]
+    numbers = num_array[0]
     # iterate through array to compare numbers
     num_array.each do |num|
-        if num > numbers.index(0)
+        if num > numbers[0]
             numbers.push(num)
-        elsif num < numbers.index(0)
-            numbers.unshift.index(num)
+        elsif num < numbers[0]
+            numbers.unshift(num)
         else
             puts "error"
         end
@@ -39,4 +39,4 @@ def sort(num_array)
 end
 
 num_array = [2,5,4,8,2]
-sort(num_array)
+p sort(num_array)
