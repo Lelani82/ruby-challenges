@@ -25,5 +25,15 @@
 # helper methods, except for .each
 
 def in_array_strict? (string, arr, strict)
-    # your code goes here
+    if strict == false
+       string.downcase!
+    else
+            arr.each do |word|
+                if word == string
+                    return true
+                else
+                    return false
+                end
+            end
+    end
 end
