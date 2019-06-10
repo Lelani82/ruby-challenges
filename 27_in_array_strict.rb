@@ -26,14 +26,22 @@
 
 def in_array_strict? (string, arr, strict)
     if strict == false
-       string.downcase!
-    else
-            arr.each do |word|
-                if word == string
-                    return true
-                else
-                    return false
-                end
+        string.downcase!
+        arr.each do |word|
+            if word == string
+                return true
+            # else
+            #     return false
             end
+        end
+    # else
+    #     new_string = string.downcase!
+    #     arr.each do |word|
+    #         if word == new_string
+    #             return true
+    #         else
+    #             return false
+    #         end
+    #     end
     end
 end
