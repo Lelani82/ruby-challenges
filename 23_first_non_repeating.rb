@@ -13,11 +13,11 @@
 # they are written by hand. 
 
 
-#*E.g.* first-non-repeat("aaaabbbcccdeeefgh") should return 'd'
+#*E.g.* first-non-repeat("aaaabbbcccdeeefgh") should return 'd'  => first non-repeating letter
 
-#*E.g.* first-non-repeat("wwwhhhggge") should return 'e'
+#*E.g.* first-non-repeat("wwwhhhggge") should return 'e'   => first non-repeating letter
 
-#*E.g.* first-non-repeat("wwwhhhggg") should return false
+#*E.g.* first-non-repeat("wwwhhhggg") should return false => only repeats are found
 
 
 ## Optional
