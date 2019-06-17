@@ -24,19 +24,33 @@
 # Expected output: [2,2,4,5,8]
 
 def sort(num_array)
-    # Initialize empry array for sorted numbers
-    numbers = num_array[0]
+    # Initialize empty array for sorted numbers
+    numbers = []
+    
     # iterate through array to compare numbers
     num_array.each do |num|
-        if num > numbers[0]
-            numbers.push(num)
-        elsif num < numbers[0]
-            numbers.unshift(num)
+        if num > 5
+            numbers.push
         else
-            puts "error"
+            numbers.unshift
         end
     end
 end
 
 num_array = [2,5,4,8,2]
 p sort(num_array)
+
+# def sort(num_array)
+#     # Initialize empty array for sorted numbers
+#     numbers = num_array[0]
+#     # iterate through array to compare numbers
+#     num_array.each do |num|
+#         if num > numbers[0]
+#             numbers.push(num)
+#         elsif num < numbers[0]
+#             numbers.unshift(num)
+#         else
+#             puts "error"
+#         end
+#     end
+# end

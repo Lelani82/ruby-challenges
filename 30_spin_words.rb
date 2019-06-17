@@ -25,6 +25,6 @@ def spin_words (words)
     return word.join(" ")
 end
 
-p spin_words( "Hey fellow warriors" )  #=> returns "Hey wollef sroirraw" 
-p spin_words( "This is a test") #=> returns "This is a test" 
-p spin_words( "This is another test" )  #=> returns "This is rehtona test"
+# p spin_words( "Hey fellow warriors" )  #=> returns "Hey wollef sroirraw" 
+# p spin_words( "This is a test") #=> returns "This is a test" 
+# p spin_words( "This is another test" )  #=> returns "This is rehtona test"

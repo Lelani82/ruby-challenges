@@ -18,3 +18,6 @@
 def missing_letter(word)
     # your code goes here
 end
+
+p missing_letter(['a','b','c','d','f']) # -> 'e'
+p missing_letter(['O','Q','R','S']) # -> 'P'
