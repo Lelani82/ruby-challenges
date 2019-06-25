@@ -24,5 +24,15 @@
 # Assume only positive whole numbers >=2 are given as argument.
 
 def prime_number(number)
-    # Your code goes here
+    n = 1
+    while n <= number 
+        n += 1
+            if (number % 1 == 0 && number % number == 0)
+                n += 1
+            end
+            p n
+    end
+    return n
 end
+
+p prime_number(45) # => 43
