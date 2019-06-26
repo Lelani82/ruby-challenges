@@ -24,5 +24,25 @@
 
 
 def bin_flip(s)
-    # Your code goes here
+    # split into array of strings
+    num = s.split("")
+    index = 0
+    steps = 0
+
+    num.each do |n|
+        if num.index(0) == "1"
+            n = "0"
+        else
+            n = "1"
+        end       
+    end    
+    p num 
+    
+    #num.find { |n| puts n; n == 1 }
+    # while num.include?("1") == true
+    #     p num
+    #     break
+    # end
 end
+
+bin_flip("0101")
