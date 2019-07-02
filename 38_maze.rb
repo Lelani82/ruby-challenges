@@ -47,9 +47,37 @@
 
 class Maze
     def initialize(maze)
-        # your code here
+        @maze = maze
+        x = 0
+        # y irterate over
+
+        # where to start 
+        #start = maze.index(2)
     end
     def walk(moves)
-       # your code here 
+        
+        x, y = 0, 0
+        moves.each do |step|
+            if step == 'N'
+                x += 1
+            elsif step == 'E'
+                y += 1
+            elsif step == 'S'
+                x -= 1
+            elsif step == 'W'
+                y -= 1
+            else
+                return false
+            end
+        end
+    case
+    if x == 3 or y == 3
+        puts 'finish'
+    elsif x == 
     end
 end
+
+#N = x+=1, y
+#E = x, y+=1
+#S = x-=1, y
+#W = x, y-=1
