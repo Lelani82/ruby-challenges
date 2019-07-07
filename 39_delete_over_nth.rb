@@ -8,5 +8,17 @@
 # delete_over_nth([23,30,15,23,16],1) => [23,30,15,16]
 
 def delete_over_nth(list,n)
-    # your code here
+   x = list[0]
+   list.each do |item|
+        if item == x
+            return true
+        else
+            return false
+        end
+    p x
+    end
+    
 end
+
+#delete_over_nth([1,1,1,2,2,2,2],2) => [1,1,2,2]
+#delete_over_nth([23,30,15,23,16],1) => [23,30,15,16]
