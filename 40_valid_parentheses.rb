@@ -12,5 +12,29 @@
 # valid_parentheses?("(a(bc)") => false
 
 def valid_parentheses?(string)
-    # your code here
+    chars = string.split("")
+
+    chars.each do |letter|
+        if letter != ("(" or ")")
+            return true
+        end
+    end
+
+    
+    # if (string.include?("(") and string.include?(")"))
+    #     return true 
+    # else 
+    #     return false 
+    # end
+    
 end
+
+# Examples that evaluate to true: 
+p valid_parentheses?("()")
+p valid_parentheses?("abc") 
+p valid_parentheses?("(a(bc))") 
+#
+# Examples that evaluate to false:
+p valid_parentheses?("(") 
+p valid_parentheses?("abc)") 
+p valid_parentheses?("(a(bc)") 
