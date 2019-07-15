@@ -15,5 +15,24 @@
 # To run the test, just run rspec spec/42_narcissistic_number_spec.rb
 
 def narcissistic_number?(number)
-    #your code goes here
+    # convert string into array 
+    number_array = "#{number}".chars
+    # find number of digits in array
+    digits = number_array.length
+    # calc each number in array to the power of digits
+    total = []
+    number_array.each do |item|
+        total << item.to_i ** digits
+    end
+
+    # check if total.sum == number => true
+    if total.sum == number
+        return true
+    # check if total.sum != number => false
+    else 
+        return false
+    end
 end
+
+p narcissistic_number?(153)   # true
+p narcissistic_number?(12)    # false
