@@ -21,9 +21,14 @@ def digital_root(number)
         return -1
     end
 
-    # split number into array and calculate sum of array
-    a = number.to_s.scan(/\d/).map {|i| i.to_i}
-    a.sum
+    # split number into array 
+    number_array = number.to_s.scan(/\d/).map {|i| i.to_i}
+    # calculate sum of array while array.length > 1
+    y = number_array.sum
+    while y.to_s.length > 1
+        y = number.to_s.scan(/\d/).map {|i| i.to_i}
+        y.sum
+    end
     
 end
 
