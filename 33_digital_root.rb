@@ -16,5 +16,16 @@
 # Return -1 if any negative argument is provided.
 
 def digital_root(number)
-    # Your code goes here
+    # return -1 if any negative number is provided
+    if number < 0
+        return -1
+    end
+
+    # split number into array and calculate sum of array
+    a = number.to_s.scan(/\d/).map {|i| i.to_i}
+    a.sum
+    
 end
+
+p digital_root(65536)   # => 7
+p digital_root(-655)   # => -1
