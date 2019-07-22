@@ -17,18 +17,23 @@
 class Definition 
 
     def initialize
-        @dictionary = {}
+        @dictionary = Hash.new(0)
     end
 
-    def add_word(word, definition)
+    def add_word(word, definition)      # should store a word and definition
         @dictionary[word] = definition
     end
 
-    def lookup(word)
+    def lookup(word)                    # should return a definition
         return @definition[word]
     end
 
-    def total_words
+    def total_words                     # should return the total number of words
         return @definition.keys.count
     end
 end
+
+definition = Definition.new
+definition.add_word('ruby', 'A red, precious stone')
+definition.total_words #-> should return 1
+definition.lookup('ruby') #-> should return 'A red, precious stone'

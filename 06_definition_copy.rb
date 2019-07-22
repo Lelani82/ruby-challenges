@@ -15,6 +15,8 @@
 # ruby tests/06_definition_test.rb
 
 class Definition
+    attr_accessor :word, :definition
+    
     def initialize(word, definition)
         @word = word
         @definition = definition
@@ -24,14 +26,15 @@ class Definition
     def add_word(word, definition)    
         add_word = Hash.new
         add_word.each do |word, definition|
+            
+            puts "word: #{word}, definition: #{definition}"
         end
-        puts "word: #{word}, definition: #{definition}"
     end
 
-    # # total_words method:
-    # def total_words
-    #     puts add_word.length
-    # end
+    # total_words method:
+    def total_words
+        puts add_word.length
+    end
 
     # lookup method:
     def lookup(word)
@@ -45,5 +48,5 @@ end
 
 definition = Definition.new("word", "definition")
 definition.add_word('ruby', 'A red, precious stone')
-#definition.total_words #-> should return 1
+definition.total_words #-> should return 1
 definition.lookup('ruby') #-> should return 'A red, precious stone'
