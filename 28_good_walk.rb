@@ -7,8 +7,8 @@
 
 # The city provides its citizens with a Walk Generating App on their phones -- 
 # everytime you press the button it sends you an array of one-letter strings 
-# representing directions to walk (eg. ['n', 's', 'w', 'e']). Y
-# ou always walk only a single block in a direction and you know it takes 
+# representing directions to walk (eg. ['n', 's', 'w', 'e']). 
+# You always walk only a single block in a direction and you know it takes 
 # you one minute to traverse one city block, so create a function that will 
 # return true if the walk the app gives you will take you exactly ten minutes 
 # (you don't want to be early or late!) and will, of course, return you to your starting point. 
@@ -26,6 +26,36 @@
 # has a file name ending in _spec.rb
 
 def good_walk(walk)
-    # your code goes here
+
+    #1st remove any array whose length != 10
+    if walk.length != 10
+        return false
+    end
+
+    #2nd starting at x,y = 0,0 
+    x = 0
+    y = 0
+    
+    walk.each do |step|
+        if step == 'n'          # n => x+=1, y
+            x += 1
+        elsif step == 'e'       # e => x, y+=1 
+            y += 1
+        elsif step == "s"       # s => x-=1, y
+            x -= 1
+        elsif step == "w"       # w => x, y-=1
+            y -= 1
+        else
+            return false
+        end
+    end
+
+    return true if x == 0 and y == 0
+    
 end
 
+# p good_walk(['n','s','e','w','n','s','e','w','n','s']) # => true
+# p good_walk(['n','n','s','s','e','w','e','w','n','s']) # => true
+# p good_walk(['n','s','e','w','n','s','e','w']) # => false
+# p good_walk([]) # => false
+# p good_walk(['n','n','n','s','e','w','e','w','n','s']) # => false
